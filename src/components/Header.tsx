@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { motion } from "framer-motion";
+import { Phone } from "lucide-react";
 
 const navLinks = [
   { label: "Início",         href: "#inicio" },
@@ -14,23 +13,15 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white shadow-sm">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center">
 
-        {/* ── MOBILE (< md): esquerda vazia | logo centro | hambúrguer direita ── */}
-        <div className="flex md:hidden w-full items-center px-4">
-
-          {/* Coluna esquerda: espaço vazio que espelha a direita */}
-          <div className="flex-1" />
-
-          {/* Logo: centro geométrico exato */}
+        {/* ── MOBILE (< md): apenas logo centralizado ── */}
+        <div className="flex md:hidden w-full justify-center">
           <motion.a
             href="#inicio"
             className="flex items-center select-none"
-            style={{ marginLeft: "-20px" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
@@ -38,22 +29,10 @@ export default function Header() {
             <img
               src="/cip-logo.png"
               alt="CIP Cuidadores"
-              className="w-[110px] mx-auto"
+              className="w-[110px]"
               style={{ height: "auto" }}
             />
           </motion.a>
-
-          {/* Coluna direita: hambúrguer alinhado à direita */}
-          <div className="flex-1 flex justify-end">
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 rounded-lg text-cip-blue transition-colors"
-              aria-label="Menu"
-            >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
-
         </div>
 
         {/* ── DESKTOP (md+): logo | nav centralizada | CTA ── */}
@@ -102,40 +81,6 @@ export default function Header() {
 
       </div>
 
-      {/* Menu mobile */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22 }}
-            className="md:hidden bg-white border-t border-slate-100 shadow-lg overflow-hidden"
-          >
-            <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="py-3 text-base font-semibold text-slate-700 hover:text-cip-blue transition-colors border-b border-slate-100 last:border-0"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="https://wa.me/5521998697530"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMenuOpen(false)}
-                className="btn btn-primary w-full justify-center mt-3"
-              >
-                <Phone size={16} /> Fale Conosco
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </header>
   );
 }
