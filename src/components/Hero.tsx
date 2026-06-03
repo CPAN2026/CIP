@@ -30,6 +30,33 @@ export default function Hero() {
 
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/40 to-black/65" />
 
+      {/* Nav sobreposta ao vídeo — mobile only, stagger por item */}
+      <nav
+        className="absolute left-0 w-full z-20 flex md:hidden justify-center flex-wrap gap-x-4 gap-y-1 px-4"
+        style={{ top: "70px" }}
+      >
+        {[
+          { label: "Início",         href: "#inicio" },
+          { label: "Serviços",       href: "#servicos" },
+          { label: "Diferenciais",   href: "#diferenciais" },
+          { label: "Nossa História", href: "#quem-somos" },
+          { label: "Depoimentos",    href: "#depoimentos" },
+          { label: "Contato",        href: "#contato" },
+        ].map((link, index) => (
+          <motion.a
+            key={link.href}
+            href={link.href}
+            className="text-white text-xs"
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.08 + 0.2 }}
+          >
+            {link.label}
+          </motion.a>
+        ))}
+      </nav>
+
       <div className="relative z-10 w-full max-w-3xl mx-auto px-4 flex flex-col items-center text-center">
 
         <motion.h1

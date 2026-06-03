@@ -15,30 +15,12 @@ const navLinks = [
 export default function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white shadow-sm">
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center">
 
-        {/* ── MOBILE (< md): apenas logo centralizado ── */}
-        <div className="flex md:hidden w-full justify-center">
-          <motion.a
-            href="#inicio"
-            className="flex items-center select-none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
-            <img
-              src="/cip-logo.png"
-              alt="CIP Cuidadores"
-              className="w-[110px]"
-              style={{ height: "auto" }}
-            />
-          </motion.a>
-        </div>
-
-        {/* ── DESKTOP (md+): logo | nav centralizada | CTA ── */}
+      {/* ── MOBILE (< md): logo + nav em linha abaixo ── */}
+      <div className="flex md:hidden flex-col items-center pt-3 pb-2 px-4">
         <motion.a
           href="#inicio"
-          className="hidden md:flex items-center gap-2 select-none flex-shrink-0"
+          className="flex items-center select-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -46,12 +28,31 @@ export default function Header() {
           <img
             src="/cip-logo.png"
             alt="CIP Cuidadores"
-            className="w-[120px] mx-auto"
+            className="w-[110px]"
             style={{ height: "auto" }}
           />
         </motion.a>
 
-        <nav className="hidden md:flex items-center gap-7 mx-auto">
+      </div>
+
+      {/* ── DESKTOP (md+): logo | nav centralizada | CTA ── */}
+      <div className="hidden md:flex max-w-6xl mx-auto px-6 h-20 items-center">
+        <motion.a
+          href="#inicio"
+          className="flex items-center gap-2 select-none flex-shrink-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <img
+            src="/cip-logo.png"
+            alt="CIP Cuidadores"
+            className="w-[120px]"
+            style={{ height: "auto" }}
+          />
+        </motion.a>
+
+        <nav className="flex items-center gap-7 mx-auto">
           {navLinks.map((link, i) => (
             <motion.a
               key={link.href}
@@ -70,7 +71,7 @@ export default function Header() {
           href="https://wa.me/5521998697530"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex btn btn-primary py-2.5 px-5 text-sm shadow-xl"
+          className="flex btn btn-primary py-2.5 px-5 text-sm shadow-xl"
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
@@ -78,7 +79,6 @@ export default function Header() {
           <Phone size={14} />
           Fale Conosco
         </motion.a>
-
       </div>
 
     </header>

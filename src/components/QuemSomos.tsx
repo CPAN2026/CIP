@@ -48,8 +48,7 @@ export default function QuemSomos() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           >
             <div className="flex justify-center md:justify-start mb-4">
-              <span className="badge-gold flex flex-col md:flex-row items-center justify-center md:justify-start gap-1 md:gap-2 w-full md:w-auto text-center md:text-left">
-                <MapPin size={13} className="flex-shrink-0" />
+              <span className="badge-gold flex items-center justify-center md:justify-start w-full md:w-auto text-center md:text-left">
                 <span className="whitespace-nowrap">Fundada em 2022 • Rio de Janeiro</span>
               </span>
             </div>
