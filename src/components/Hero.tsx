@@ -36,7 +36,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.1 }}
-          className="font-extrabold text-white leading-[1.15] mb-4 mt-16 sm:mt-0"
+          className="font-extrabold text-white leading-[1.15] mb-4"
           style={{ fontSize: "clamp(1.4rem, 5vw, 2.6rem)" }}
         >
           Cuidado Profissional e{" "}

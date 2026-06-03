@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
-  { label: "Início",        href: "#inicio" },
-  { label: "Serviços",      href: "#servicos" },
-  { label: "Diferenciais",  href: "#diferenciais" },
+  { label: "Início",         href: "#inicio" },
+  { label: "Serviços",       href: "#servicos" },
+  { label: "Diferenciais",   href: "#diferenciais" },
   { label: "Nossa História", href: "#quem-somos" },
-  { label: "Depoimentos",   href: "#depoimentos" },
-  { label: "Contato",       href: "#contato" },
+  { label: "Depoimentos",    href: "#depoimentos" },
+  { label: "Contato",        href: "#contato" },
 ];
 
 export default function Header() {
@@ -18,24 +18,61 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white shadow-sm">
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between relative">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center">
 
-        {/* Espaçador de balanceamento — mantém logo centrado no mobile */}
-        <div className="w-10 flex-shrink-0 md:hidden" />
+        {/* ── MOBILE (< md): esquerda vazia | logo centro | hambúrguer direita ── */}
+        <div className="flex md:hidden w-full items-center px-4">
 
-        {/* Logo — centrado absoluto no mobile, estático no desktop */}
+          {/* Coluna esquerda: espaço vazio que espelha a direita */}
+          <div className="flex-1" />
+
+          {/* Logo: centro geométrico exato */}
+          <motion.a
+            href="#inicio"
+            className="flex items-center select-none"
+            style={{ marginLeft: "-20px" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <img
+              src="/cip-logo.png"
+              alt="CIP Cuidadores"
+              className="w-[110px] mx-auto"
+              style={{ height: "auto" }}
+            />
+          </motion.a>
+
+          {/* Coluna direita: hambúrguer alinhado à direita */}
+          <div className="flex-1 flex justify-end">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="p-2 rounded-lg text-cip-blue transition-colors"
+              aria-label="Menu"
+            >
+              {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
+
+        </div>
+
+        {/* ── DESKTOP (md+): logo | nav centralizada | CTA ── */}
         <motion.a
           href="#inicio"
-          className="flex items-center select-none absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0"
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
+          className="hidden md:flex items-center gap-2 select-none flex-shrink-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <img src="/cip-logo.png" alt="CIP Cuidadores" className="w-[110px] sm:w-[140px]" style={{ height: "auto" }} />
+          <img
+            src="/cip-logo.png"
+            alt="CIP Cuidadores"
+            className="w-[120px] mx-auto"
+            style={{ height: "auto" }}
+          />
         </motion.a>
 
-        {/* Navegação desktop — stagger de cima para baixo */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-7 mx-auto">
           {navLinks.map((link, i) => (
             <motion.a
               key={link.href}
@@ -50,28 +87,19 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA + hambúrguer */}
-        <div className="flex items-center gap-3">
-          <motion.a
-            href="https://wa.me/5521998697530"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex btn btn-primary py-2.5 px-5 text-sm shadow-xl"
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
-            <Phone size={14} />
-            Fale Conosco
-          </motion.a>
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 rounded-lg text-cip-blue transition-colors"
-            aria-label="Menu"
-          >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+        <motion.a
+          href="https://wa.me/5521998697530"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex btn btn-primary py-2.5 px-5 text-sm shadow-xl"
+          initial={{ opacity: 0, x: 60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <Phone size={14} />
+          Fale Conosco
+        </motion.a>
+
       </div>
 
       {/* Menu mobile */}
