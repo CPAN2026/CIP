@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens CIP ──────────────────────────────────────── */
+@theme {
+  --color-cip-blue:       #003696;
+  --color-cip-blue-dark:  #002670;
+  --color-cip-blue-hover: #004bc2;
+  --color-cip-dark:       #001a4d;
+  --color-cip-green:      #008220;
+  --color-cip-green-dark: #006518;
+  --color-cip-gold:       #FDC242;
+  --color-cip-gold-dark:  #e5a820;
+  --color-cip-light:      #BED2E7;
+  --color-cip-light-soft: #dce9f3;
+  --color-cip-bg:         #F7F9FC;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: #F7F9FC;
+  --foreground: #0f172a;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Componentes reutilizáveis ──────────────────────────────── */
+@layer components {
+
+  /* Botões — border-radius 8px */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    transition: background-color 150ms ease, transform 100ms ease,
+                box-shadow 150ms ease, color 150ms ease;
+    cursor: pointer;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+  .btn:active  { transform: scale(0.975); }
+  .btn:focus-visible {
+    outline: 3px solid #FDC242;
+    outline-offset: 3px;
+  }
+
+  .btn-primary {
+    background-color: #008220;
+    color: #ffffff;
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,130,32,0.30);
+  }
+  .btn-primary:hover {
+    background-color: #006518;
+    box-shadow: 0 6px 20px rgba(0,130,32,0.40);
+  }
+
+  .btn-secondary {
+    background-color: #003696;
+    color: #ffffff;
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,54,150,0.25);
+  }
+  .btn-secondary:hover { background-color: #002670; }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #003696;
+    border: 2px solid #003696;
+    padding: 0.8125rem 1.625rem;
+    font-size: 1rem;
+  }
+  .btn-outline:hover {
+    background-color: #003696;
+    color: #ffffff;
+  }
+
+  .btn-outline-white {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255,255,255,0.55);
+    padding: 0.8125rem 1.625rem;
+    font-size: 1rem;
+  }
+  .btn-outline-white:hover {
+    background-color: #ffffff;
+    color: #003696;
+    border-color: #ffffff;
+  }
+
+  /* Cards — border-radius 16px */
+  .card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0,54,150,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    transition: box-shadow 220ms ease, transform 220ms ease;
+  }
+  .card:hover {
+    box-shadow: 0 12px 32px rgba(0,54,150,0.14), 0 2px 8px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+  }
+
+  .card-soft {
+    background-color: #BED2E7;
+    border-radius: 1rem;
+  }
+
+  .badge-gold {
+    align-items: center;
+    gap: 0.375rem;
+    background-color: #FDC242;
+    color: #003696;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    padding: 0.3rem 0.875rem;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+  }
+
+  .section-soft  { background-color: #BED2E7; }
+  .section-blue  { background-color: #003696; color: #ffffff; }
+  .section-dark  { background-color: #001a4d; color: #ffffff; }
+}
