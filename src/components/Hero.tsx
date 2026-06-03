@@ -33,7 +33,7 @@ export default function Hero() {
       {/* Nav sobreposta ao vídeo — mobile only, stagger por item */}
       <nav
         className="absolute left-0 w-full z-20 flex md:hidden justify-center flex-wrap gap-x-4 gap-y-1 px-4"
-        style={{ top: "70px" }}
+        style={{ top: "70px", pointerEvents: "none" }}
       >
         {[
           { label: "Início",         href: "#inicio" },
@@ -47,7 +47,7 @@ export default function Hero() {
             key={link.href}
             href={link.href}
             className="text-white text-xs"
-            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)" }}
+            style={{ textShadow: "0 1px 3px rgba(0,0,0,0.8)", pointerEvents: "auto" }}
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.08 + 0.2 }}
