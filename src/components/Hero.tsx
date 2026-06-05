@@ -27,8 +27,8 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover z-0"
         style={{ willChange: "transform" }}
       >
-        <source src="/video cip.webm" type="video/webm" />
-        <source src="/video cip.mp4" type="video/mp4" />
+        <source src="/hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+        <source src="/hero-desktop.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/50 via-black/40 to-black/65" />
