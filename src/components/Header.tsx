@@ -25,12 +25,13 @@ export default function Header() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <img
-            src="/cip-logo.png"
-            alt="CIP Cuidadores"
-            className="w-[110px]"
-            style={{ height: "auto" }}
-          />
+          <div style={{ width: 110, height: 58, flexShrink: 0 }}>
+            <img
+              src="/cip-logo.png"
+              alt="CIP Cuidadores"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+            />
+          </div>
         </motion.a>
 
       </div>
@@ -44,12 +45,13 @@ export default function Header() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <img
-            src="/cip-logo.png"
-            alt="CIP Cuidadores"
-            className="w-[120px]"
-            style={{ height: "auto" }}
-          />
+          <div style={{ width: 120, height: 64, flexShrink: 0 }}>
+            <img
+              src="/cip-logo.png"
+              alt="CIP Cuidadores"
+              style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
+            />
+          </div>
         </motion.a>
 
         <nav className="flex items-center gap-7 mx-auto">
