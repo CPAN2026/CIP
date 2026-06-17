@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   title: "CIP – Cuidadores de Idosos Profissionais",
   description:
     "Cuidado humanizado e profissional para idosos em casa. A CIP conecta famílias a cuidadores certificados em todo o Brasil.",
+  icons: {
+    icon: '/favicon.png',
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({
