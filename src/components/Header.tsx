@@ -34,6 +34,20 @@ export default function Header() {
           </div>
         </motion.a>
 
+        <nav className="flex flex-wrap justify-center gap-x-4 gap-y-1 mt-2 pb-1 w-full">
+          {navLinks.map((link, i) => (
+            <motion.a
+              key={link.href}
+              href={link.href}
+              className="text-xs font-semibold text-slate-700 hover:text-cip-blue transition-colors duration-200 whitespace-nowrap"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 + i * 0.05, ease: "easeOut" }}
+            >
+              {link.label}
+            </motion.a>
+          ))}
+        </nav>
       </div>
 
       {/* ── DESKTOP (md+): logo | nav centralizada | CTA ── */}
