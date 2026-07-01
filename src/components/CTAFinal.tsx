@@ -55,7 +55,7 @@ export default function CTAFinal() {
           className="flex justify-center mb-8 md:mb-10"
         >
           <a
-            href="https://wa.me/5521998697530"
+            href="https://wa.me/19209569439"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full max-w-xs sm:w-auto flex items-center justify-center gap-3 rounded-full font-bold text-white text-base md:text-lg transition-opacity hover:opacity-90 shadow-xl whitespace-nowrap px-10 py-4 md:px-12"

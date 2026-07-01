@@ -84,7 +84,7 @@ export default function Header() {
         </nav>
 
         <motion.a
-          href="https://wa.me/5521998697530"
+          href="https://wa.me/19209569439"
           target="_blank"
           rel="noopener noreferrer"
           className="flex btn btn-primary py-2.5 px-5 text-sm shadow-xl"

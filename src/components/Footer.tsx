@@ -121,14 +121,14 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="https://wa.me/5521998697530" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/19209569439" target="_blank" rel="noopener noreferrer"
                   className="flex items-start gap-3 text-sm group"
                   style={{ color: "rgba(255,255,255,0.58)" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#FDC242"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.58)"; }}
                 >
                   <Phone size={15} className="flex-shrink-0 mt-0.5 text-cip-gold" />
-                  (21) 99869-7530
+                  Fale agora via WhatsApp
                 </a>
               </li>
               <li>

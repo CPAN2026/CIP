@@ -141,7 +141,7 @@ export default function ComoFunciona() {
           className="text-center mt-10 md:mt-14"
         >
           <a
-            href="https://wa.me/5521998697530"
+            href="https://wa.me/19209569439"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary text-sm md:text-base w-full sm:w-auto justify-center px-8 py-3.5 md:px-10 md:py-4 shadow-xl"

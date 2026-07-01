@@ -93,7 +93,7 @@ export default function Hero() {
           className="w-full flex justify-center"
         >
           <a
-            href="https://wa.me/5521998697530"
+            href="https://wa.me/19209569439"
             target="_blank"
             rel="noopener noreferrer"
             className="w-auto flex items-center justify-center gap-3 rounded-full font-bold text-white text-sm sm:text-base transition-opacity hover:opacity-90 shadow-xl py-3 px-6 sm:py-[0.9rem] sm:px-8"

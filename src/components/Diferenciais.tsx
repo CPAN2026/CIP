@@ -53,7 +53,7 @@ export default function Diferenciais() {
 
           <div>
             <a
-              href="https://wa.me/5521998697530"
+              href="https://wa.me/19209569439"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 rounded-full px-7 py-3.5 md:px-8 md:py-4 font-bold text-white text-sm md:text-base transition-opacity hover:opacity-90 w-full sm:w-auto"
